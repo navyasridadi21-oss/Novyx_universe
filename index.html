@@ -1,51 +1,333 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NØVIYX Universe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAVYA | NØVYX</title><style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #020617, #101b45, #241044);
-            color: white;
-            text-align: center;
-            min-height: 100vh;
-        }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #f4f5ff;
+    background: #050713;
+    line-height: 1.7;
+}
 
-        header {
-            padding: 55px 15px 25px;
-        }
+header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    background:
+        radial-gradient(ellipse at top, #152b65 0%, transparent 60%),
+        linear-gradient(145deg, #050713, #101633, #03040a);
+}
 
-        h1 {
-            font-size: 36px;
-            letter-spacing: 3px;
-            color: #b9caff;
-            text-shadow: 0 0 18px #657cff;
-        }
+.hero {
+    max-width: 750px;
+    animation: appear 1.5s ease;
+}
 
-        p {
-            color: #d8dcff;
-            line-height: 1.8;
-        }
+.tag {
+    color: #a7bbff;
+    letter-spacing: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
 
-        button {
-            background: #a9baff;
-            color: #080d25;
-            border: none;
-            padding: 13px 24px;
-            border-radius: 25px;
-            font-size: 16px;
-            margin: 15px;
-            cursor: pointer;
-        }
+h1 {
+    font-size: clamp(42px, 10vw, 85px);
+    letter-spacing: 3px;
+    margin: 20px 0;
+    background: linear-gradient(90deg, #ffffff, #91aaff, #d8baff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px #526fff66);
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(185, 202
+.subtitle {
+    color: #c4c9e7;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #839bff;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    margin: 7px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #526fff;
+    box-shadow: 0 0 25px #526fff88;
+    transform: translateY(-3px);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 13px 8px;
+    background: #080b19ee;
+    border-bottom: 1px solid #29345d;
+    backdrop-filter: blur(12px);
+}
+
+nav a {
+    text-decoration: none;
+    color: #d9e0ff;
+    padding: 7px 12px;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: #9bb0ff;
+}
+
+section {
+    padding: 75px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #b7c6ff;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: linear-gradient(135deg, #111a36, #0a0e1d);
+    border: 1px solid #293762;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px #0004;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #819aff;
+    transform: translateY(-4px);
+}
+
+.about-text {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    color: #d0d5ec;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.item {
+    text-align: center;
+}
+
+.item h3 {
+    color: #d2dcff;
+    margin-bottom: 8px;
+}
+
+.item p {
+    color: #aeb7d7;
+    font-size: 14px;
+}
+
+.symbol {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.note {
+    text-align: center;
+    margin-top: 25px;
+    color: #aab5d8;
+    font-size: 13px;
+}
+
+footer {
+    padding: 30px 15px;
+    text-align: center;
+    color: #aab5d8;
+    border-top: 1px solid #29345d;
+    background: #070914;
+    font-size: 13px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 55px 16px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+</style></head><body><header id="home">
+    <div class="hero">
+        <p class="tag">Welcome to my universe</p>    <h1>NAVYA | NØVYX</h1>
+
+    <p class="subtitle">
+        A quiet mind. A curious soul. A universe of my own. 🌌
+    </p>
+
+    <a href="#about" class="button">Discover My World ✦</a>
+    <a href="#interests" class="button">Explore My Vibe ♡</a>
+</div>
+
+</header><nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#interests">Interests</a>
+    <a href="#songs">Music</a>
+    <a href="#dramas">Dramas</a>
+    <a href="#contact">Message</a>
+</nav><section id="about">
+    <h2 class="section-title">✧ A Little About Me ✧</h2><div class="card about-text">
+    <p>
+        Welcome to my little corner of the internet. 💙
+    </p>
+    <p>
+        I'm Navya — someone who loves meaningful music,
+        beautiful stories, quiet moments, and learning new things.
+        I believe every person has a universe inside them,
+        filled with dreams, memories, and endless possibilities.
+    </p>
+    <p>
+        This is my space, my vibe, and my universe. 🦋
+    </p>
+</div>
+
+</section><section id="interests">
+    <h2 class="section-title">✦ Things I Love ✦</h2><div class="grid">
+    <div class="card item">
+        <div class="symbol">🎧</div>
+        <h3>Music</h3>
+        <p>Melodies that say what words cannot.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">🎬</div>
+        <h3>Stories</h3>
+        <p>Movies and dramas that stay in the heart.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">💻</div>
+        <h3>Creating</h3>
+        <p>Learning to code and building new things.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">🌙</div>
+        <h3>My Own World</h3>
+        <p>Dreams, thoughts, creativity, and peaceful moments.</p>
+    </div>
+</div>
+
+</section><section id="songs">
+    <h2 class="section-title">♫ My Music Corner ♫</h2><div class="grid">
+    <div class="card item">
+        <div class="symbol">🎵</div>
+        <h3>Pavizha Mazha</h3>
+        <p>A melody with a beautiful feeling.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">🎶</div>
+        <h3>Nila Nila</h3>
+        <p>For those dreamy, quiet moments.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">🎼</div>
+        <h3>My Playlist</h3>
+        <p>Every song holds a different emotion.</p>
+    </div>
+</div>
+
+<p class="note">
+    These are song cards. Music playback can be added later.
+</p>
+
+</section><section id="dramas">
+    <h2 class="section-title">♡ My Drama Universe ♡</h2><div class="grid">
+    <div class="card item">
+        <div class="symbol">🌸</div>
+        <h3>Hidden Love</h3>
+        <p>Sweet moments and heartfelt emotions.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">🦋</div>
+        <h3>When I Fly Towards You</h3>
+        <p>Warm friendships and youthful memories.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">✨</div>
+        <h3>True Beauty</h3>
+        <p>Friendship, feelings, and finding yourself.</p>
+    </div>
+
+    <div class="card item">
+        <div class="symbol">🌷</div>
+        <h3>Our Secret</h3>
+        <p>A story filled with memorable moments.</p>
+    </div>
+</div>
+
+</section><section id="contact">
+    <h2 class="section-title">✧ Leave a Little Sparkle ✧</h2><div class="card about-text">
+    <p>
+        Thanks for visiting my universe. 💙
+    </p>
+    <p>
+        Keep dreaming, keep learning, and stay curious.
+    </p>
+    <a href="#home" class="button">Back to the Stars ↑</a>
+</div>
+
+</section><footer>
+    <p>Made with ♡ by Navya</p>
+    <p>© 2026 NAVYA | NØVYX · My little universe 🌌</p>
+</footer></body>
+        </html>
